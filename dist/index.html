@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>WeatherGO</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div id="searchbar">
+      <form>
+        <table>
+          <tr>
+            <td>
+              <input id="cityname" type="text" placeholder="search city" required />
+            </td>
+            <td>
+              <button type="button" id="search-btn">Search</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    </header>
+
+    <div id="show-weather">
+      <div id="upper">
+        <div id="show-name"></div>
+        <div id="show-condition"></div>
+      </div>
+      <div id="lower">
+        <div id="show-temp"></div>
+        <div id="show-humid"></div>
+        <div id="show-pressure"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
