@@ -3,12 +3,13 @@ const show = document.getElementById('show-weather');
 
 async function getWeatherDetails(city) {
   let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
-  const response = await fetch(url, {mode: 'cors'})
+  await fetch(url, {mode: 'cors'})
   .then(function(response) {
-    return response.json();
-  });
-  
-  showWeather(response, capitalizeLetter(city));
+    showWeather(response.json(), capitalizeLetter(city));
+  })
+  .catch(function(err) {
+    alert('the city name was not found');
+  })
 }
 
 function capitalizeLetter(str) {
