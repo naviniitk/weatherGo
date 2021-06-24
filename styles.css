@@ -1,0 +1,64 @@
+body {
+  background: #2f2f2f; 
+  margin: 0;
+  align-items: center; 
+  justify-content: center; 
+}
+
+header {
+  width: 100%;
+  margin: auto;
+  background-color: lavender;
+  padding: 1rem;
+}
+form {
+  position: relative;
+  width: 30rem;
+}
+
+input, button {
+  font-family: 'Lato', sans-serif;
+  border: 0;
+  color: #2f2f2f;
+  font-size: 1.8rem;
+}
+
+#searchbar {
+  background-color: hotpink;
+  width: 30rem;
+  margin: auto;
+  padding: 10px;
+}
+#show-weather {
+  height: 200px;
+  width: 300px;
+  margin: auto;
+  margin-top: 2rem;
+  font-family: monospace;
+  display: none;
+}
+ #upper {
+   background-color: grey;
+   height: 50%;
+   width: 100%;
+   padding: 1rem;
+ }
+ #lower {
+   background-color: honeydew;
+   height: 50%;
+   width: 100%;
+   padding: 1rem;
+ }
+
+ #show-name {
+   font-size: 3.5rem;
+   font-family: monospace;
+ }
+#show-condition {
+  font-family: monospace;
+  font-size: 1.5rem;
+}
+#show-temp {
+  font-size: 3rem;
+  padding: 5px;
+}
