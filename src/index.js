@@ -2,7 +2,13 @@ const show = document.getElementById('show-weather');
 
 
 async function getWeatherDetails(city) {
-  let url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
+  let url = '';
+  if(location.protocol === 'http:'){
+    url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
+  } else {
+    url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
+  }
+  
   const response = await fetch(url, {mode: 'cors'})
   .then(function(response) {
     if(response.ok){
@@ -14,6 +20,7 @@ async function getWeatherDetails(city) {
   })
   .catch(function(err) {
     alert('city name not found');
+    return;
   });
   showWeather(response, capitalizeLetter(city));
 }
