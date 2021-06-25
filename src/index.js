@@ -1,27 +1,28 @@
 const show = document.getElementById('show-weather');
 
-
 async function getWeatherDetails(city) {
-  let url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
+  let url =
+    'https://api.openweathermap.org/data/2.5/weather?q=' +
+    city +
+    '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
   // if(location.protocol === 'http:'){
   //   url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
   // } else {
   //   url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
   // }
-  
-  const response = await fetch(url, {mode: 'cors'})
-  .then(function(response) {
-    if(response.ok){
-      return response.json();
-    }
-    else {
-      throw new Error('not found');
-    }
-  })
-  .catch(function(err) {
-    alert('city name not found');
-    return;
-  });
+
+  const response = await fetch(url, { mode: 'cors' })
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('not found');
+      }
+    })
+    .catch(function (err) {
+      alert('city name not found');
+      return;
+    });
   showWeather(response, capitalizeLetter(city));
 }
 
@@ -31,12 +32,12 @@ function capitalizeLetter(str) {
 }
 
 function cToF(celsius) {
-  const fahr = celsius*9/5 + 32;
+  const fahr = (celsius * 9) / 5 + 32;
   return fahr;
 }
 
 function fToC(fahr) {
-  const cel = (fahr - 32)*5/9;
+  const cel = ((fahr - 32) * 5) / 9;
   return cel;
 }
 
