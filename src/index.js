@@ -1,12 +1,12 @@
 const show = document.getElementById('show-weather');
 
 async function getWeatherDetails(city) {
-  let url = '';
-  if(location.protocol === 'http:'){
-    url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
-  } else {
-    url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
-  }
+  let url = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
+  // if(location.protocol === 'http:'){
+  //   url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
+  // } else {
+  //   url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=a631e1e5b48cd37e87f8123460fe88e6';
+  // }
 
   const response = await fetch(url, { mode: 'cors' })
     .then(function (response) {
